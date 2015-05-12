@@ -1,6 +1,4 @@
-package login;
-
-import javax.swing.KeyStroke;
+package org.mdpnp.login.login;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -68,8 +66,7 @@ public class Login extends Application {
 				Login.class.getResource("Login.css").toExternalForm());
 		primaryStage.show();
 
-		new Thread(new Runnable() {
-			public void run() {
+		new Thread(() -> {
 				CardReader.Reader();
 				Platform.runLater(new Runnable() {
 					public void run() {
@@ -82,7 +79,6 @@ public class Login extends Application {
 						}
 					}
 				});
-			}
 		}).start();
 
 		final Timeline timeline = new Timeline(new KeyFrame(
